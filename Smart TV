@@ -1,0 +1,105 @@
+public class SmartTV {
+    
+    // Atributos
+    private String marca;
+    private int pulgadas;
+    private boolean encendido;
+    private String canalActual;
+    private int volumenActual;
+    private String[] aplicaciones;
+    
+    // Constructor
+    public SmartTV(String marca, int pulgadas, String[] aplicaciones) {
+        this.marca = marca;
+        this.pulgadas = pulgadas;
+        this.aplicaciones = aplicaciones;
+        this.encendido = false;
+        this.canalActual = "";
+        this.volumenActual = 0;
+    }
+    
+    // Métodos
+    public void encender() {
+        this.encendido = true;
+    }
+    
+    public void apagar() {
+        this.encendido = false;
+    }
+    
+    public void cambiarCanal(String canal) {
+        if (encendido) {
+            this.canalActual = canal;
+        }
+    }
+    
+    public void subirVolumen() {
+        if (encendido && this.volumenActual < 100) {
+            this.volumenActual++;
+        }
+    }
+    
+    public void bajarVolumen() {
+        if (encendido && this.volumenActual > 0) {
+            this.volumenActual--;
+        }
+    }
+    
+    public void instalarAplicacion(String app) {
+        for (String aplicacion : this.aplicaciones) {
+            if (aplicacion == null) {
+                aplicacion = app;
+                break;
+            }
+        }
+    }
+    
+    // Getters y setters
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getPulgadas() {
+        return pulgadas;
+    }
+
+    public void setPulgadas(int pulgadas) {
+        this.pulgadas = pulgadas;
+    }
+
+    public boolean isEncendido() {
+        return encendido;
+    }
+
+    public void setEncendido(boolean encendido) {
+        this.encendido = encendido;
+    }
+
+    public String getCanalActual() {
+        return canalActual;
+    }
+
+    public void setCanalActual(String canalActual) {
+        this.canalActual = canalActual;
+    }
+
+    public int getVolumenActual() {
+        return volumenActual;
+    }
+
+    public void setVolumenActual(int volumenActual) {
+        this.volumenActual = volumenActual;
+    }
+
+    public String[] getAplicaciones() {
+        return aplicaciones;
+    }
+
+    public void setAplicaciones(String[] aplicaciones) {
+        this.aplicaciones = aplicaciones;
+    }
+}
